@@ -68,7 +68,7 @@ const currentCourses = [
 function IUTMark({ dark = false }: { dark?: boolean }) {
   return (
     <div className={`brand-lockup ${dark ? "brand-lockup-dark" : ""}`}>
-      <div className="brand-mark"><img src="/manus-storage/pasted_file_nnSfpl_image_96a7ac50.png" alt="IUT emblem" /></div>
+      <div className="brand-mark"><img src="/iut-logo.png" alt="IUT emblem" /></div>
       <div>
         <strong>Student Portal</strong>
         <span>Islamic University of Technology</span>

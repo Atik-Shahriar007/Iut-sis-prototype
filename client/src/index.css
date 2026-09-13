@@ -47,8 +47,8 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(76, 138, 198
 .login-story-content { position: relative; min-height: 100vh; display: flex; flex-direction: column; padding: 46px 12%; }
 .brand-lockup { display: flex; align-items: center; gap: 12px; color: var(--navy); }
 .brand-lockup-dark { color: white; }
-.brand-mark { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; color: white; background: var(--navy); font-size: 13px; font-weight: 700; letter-spacing: .08em; box-shadow: inset 0 0 0 1px rgba(255,255,255,.16); }
-.brand-lockup-dark .brand-mark { background: var(--gold); color: var(--navy-deep); }
+.brand-mark { width: 46px; height: 46px; display: grid; place-items: center; border-radius: 14px; color: var(--navy); background: white; font-size: 13px; font-weight: 700; letter-spacing: .08em; box-shadow: inset 0 0 0 1px rgba(16,44,69,.12); }
+.brand-lockup-dark .brand-mark { background: white; color: var(--navy-deep); }
 .brand-lockup strong { display: block; font-size: 15px; letter-spacing: -.02em; }
 .brand-lockup span { display: block; margin-top: 2px; color: var(--muted); font-size: 10px; letter-spacing: .02em; }
 .brand-lockup-dark span { color: rgba(255,255,255,.58); }

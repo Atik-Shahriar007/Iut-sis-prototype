@@ -14,10 +14,12 @@ import {
   LayoutDashboard,
   LogOut,
   Menu,
+  Moon,
   MoreHorizontal,
   Search,
   Settings,
   ShieldCheck,
+  Sun,
   UserRound,
   UsersRound,
   X,
@@ -29,6 +31,8 @@ type HomeProps = {
   authenticated: boolean;
   onLogin: () => void;
   onLogout: () => void;
+  darkMode: boolean;
+  onToggleDarkMode: () => void;
 };
 
 type Course = {
@@ -133,8 +137,8 @@ function Sidebar({ view, setView, onLogout, open, setOpen }: { view: View; setVi
   );
 }
 
-function Topbar({ view, onMenu }: { view: View; onMenu: () => void }) {
-  return <header className="topbar"><button className="mobile-menu" onClick={onMenu} aria-label="Open navigation"><Menu size={20} /></button><div className="breadcrumb"><span>Student portal</span><span>/</span><strong>{view}</strong></div><div className="topbar-actions"><button className="icon-button search-button" aria-label="Search"><Search size={18} /></button><button className="icon-button notification-button" aria-label="Notifications"><Bell size={18} /><i /></button><div className="topbar-profile"><div className="avatar avatar-small">AS</div><div><strong>Atik Shahriar</strong><span>230042116</span></div><ChevronDown size={15} /></div></div></header>;
+function Topbar({ view, onMenu, darkMode, onToggleDarkMode }: { view: View; onMenu: () => void; darkMode: boolean; onToggleDarkMode: () => void }) {
+  return <header className="topbar"><button className="mobile-menu" onClick={onMenu} aria-label="Open navigation"><Menu size={20} /></button><div className="breadcrumb"><span>Student portal</span><span>/</span><strong>{view}</strong></div><div className="topbar-actions"><button className="icon-button search-button" aria-label="Search"><Search size={18} /></button><button className="icon-button notification-button" aria-label="Notifications"><Bell size={18} /><i /></button><button className="theme-toggle" onClick={onToggleDarkMode} aria-label={darkMode ? "Switch to light mode" : "Switch to dark mode"} title={darkMode ? "Switch to light mode" : "Switch to dark mode"}><span className="theme-toggle-track"><span className="theme-toggle-thumb">{darkMode ? <Moon size={13} /> : <Sun size={13} />}</span></span><span className="theme-toggle-label">{darkMode ? "Dark" : "Light"}</span></button><div className="topbar-profile"><div className="avatar avatar-small">AS</div><div><strong>Atik Shahriar</strong><span>230042116</span></div><ChevronDown size={15} /></div></div></header>;
 }
 
 function PageHeader({ eyebrow, title, description, action }: { eyebrow: string; title: string; description: string; action?: React.ReactNode }) {
@@ -190,7 +194,7 @@ function Toast({ message, onClose }: { message: string; onClose: () => void }) {
   return <div className="toast"><span className="toast-check"><Check size={15} /></span><span>{message}</span><button onClick={onClose}><X size={15} /></button></div>;
 }
 
-export default function Home({ authenticated, onLogin, onLogout }: HomeProps) {
+export default function Home({ authenticated, onLogin, onLogout, darkMode, onToggleDarkMode }: HomeProps) {
   const [view, setView] = useState<View>("Dashboard");
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [registered, setRegistered] = useState<string[]>([]);
@@ -199,5 +203,5 @@ export default function Home({ authenticated, onLogin, onLogout }: HomeProps) {
 
   if (!authenticated) return <LoginScreen onLogin={onLogin} />;
 
-  return <div className="app-shell"><Sidebar view={view} setView={setView} onLogout={onLogout} open={sidebarOpen} setOpen={setSidebarOpen} />{sidebarOpen && <button className="sidebar-scrim" onClick={() => setSidebarOpen(false)} aria-label="Close navigation overlay" /> }<main className="main-area"><Topbar view={view} onMenu={() => setSidebarOpen(true)} /><div className="content-area">{view === "Dashboard" && <Dashboard setView={setView} />}{view === "Courses" && <Courses registered={registered} setRegistered={setRegistered} notify={notify} />}{view === "Schedule" && <Schedule />}{view === "Results" && <Results />}{view === "Attendance" && <Attendance />}{view === "Profile" && <Profile />}</div></main>{toast && <Toast message={toast} onClose={() => setToast("")} />}</div>;
+  return <div className="app-shell"><Sidebar view={view} setView={setView} onLogout={onLogout} open={sidebarOpen} setOpen={setSidebarOpen} />{sidebarOpen && <button className="sidebar-scrim" onClick={() => setSidebarOpen(false)} aria-label="Close navigation overlay" /> }<main className="main-area"><Topbar view={view} onMenu={() => setSidebarOpen(true)} darkMode={darkMode} onToggleDarkMode={onToggleDarkMode} /><div className="content-area">{view === "Dashboard" && <Dashboard setView={setView} />}{view === "Courses" && <Courses registered={registered} setRegistered={setRegistered} notify={notify} />}{view === "Schedule" && <Schedule />}{view === "Results" && <Results />}{view === "Attendance" && <Attendance />}{view === "Profile" && <Profile />}</div></main>{toast && <Toast message={toast} onClose={() => setToast("")} />}</div>;
 }

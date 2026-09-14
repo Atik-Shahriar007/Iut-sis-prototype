@@ -239,3 +239,62 @@ button:focus-visible, input:focus-visible { outline: 3px solid rgba(76, 138, 198
 .brand-mark img { width: 29px; height: 34px; object-fit: contain; }
 .sidebar-top .brand-mark img { width: 24px; height: 28px; }
 .profile-avatar { overflow: hidden; }
+
+/* Theme switch */
+.theme-toggle { display: inline-flex; align-items: center; gap: 7px; min-height: 34px; padding: 0 9px 0 6px; border: 1px solid #e2e9e6; border-radius: 20px; color: #73838a; background: rgba(255,255,255,.72); font-size: 10px; font-weight: 700; transition: background .18s, border-color .18s, color .18s; }
+.theme-toggle:hover { color: var(--navy); border-color: #b8c9c6; background: white; }
+.theme-toggle-track { display: inline-flex; align-items: center; width: 25px; height: 20px; padding: 3px; border-radius: 20px; background: #e9efed; }
+.theme-toggle-thumb { display: grid; width: 14px; height: 14px; place-items: center; border-radius: 50%; color: #b17820; background: white; box-shadow: 0 2px 5px rgba(16,44,69,.16); transition: transform .2s var(--ease-out), background .18s, color .18s; }
+.theme-dark .theme-toggle-track { background: #294b63; }
+.theme-dark .theme-toggle-thumb { transform: translateX(5px); color: #e9c06d; background: #102c45; }
+
+/* Dark theme */
+.theme-dark { --navy: #d9e8f0; --navy-deep: #071827; --navy-soft: #9cc1d3; --ink: #e7eef1; --muted: #9aadb7; --line: #29404d; --mist: #101f2b; --warm: #0d1b26; --white: #152936; --gold-pale: #3b3020; --blue-pale: #1c3448; --mint-pale: #173a38; --rose-pale: #3b2830; --background: #0d1b26; --foreground: #e7eef1; --primary: #d9e8f0; --border: #29404d; color-scheme: dark; }
+.theme-dark body, .theme-dark .app-shell { background: #0d1b26; color: #e7eef1; }
+.theme-dark .login-page, .theme-dark .login-panel { background: #0d1b26; }
+.theme-dark .login-heading h2, .theme-dark .page-header h1, .theme-dark .card-heading h2, .theme-dark .table-heading h2, .theme-dark .stat-content > strong, .theme-dark .instructor strong, .theme-dark .announcement-item strong, .theme-dark .profile-body h2, .theme-dark .identity-meta strong, .theme-dark .details-grid strong, .theme-dark .advisor-row strong, .theme-dark .semester-card strong, .theme-dark .topbar-profile strong, .theme-dark .result-hero strong, .theme-dark .result-mini strong, .theme-dark .course-name strong, .theme-dark .course-row, .theme-dark .results-table, .theme-dark .attendance-row, .theme-dark .deadline strong { color: #e7eef1; }
+.theme-dark .login-heading p, .theme-dark .page-header p, .theme-dark .card-heading p, .theme-dark .announcement-item p, .theme-dark .next-class-meta div, .theme-dark .stat-content > span, .theme-dark .stat-content > small, .theme-dark .profile-body p, .theme-dark .details-grid small, .theme-dark .identity-meta small, .theme-dark .topbar-profile span, .theme-dark .breadcrumb, .theme-dark .instructor small, .theme-dark .semester-card small, .theme-dark .result-mini small, .theme-dark .course-name small, .theme-dark .attendance-row small { color: #9aadb7; }
+.theme-dark .sidebar { border-color: #223744; background: #122633; box-shadow: 12px 0 30px rgba(0,0,0,.14); }
+.theme-dark .topbar { border-color: #223744; background: rgba(13,27,38,.9); }
+.theme-dark .surface-card, .theme-dark .stat-card { border-color: #29404d; background: #152936; box-shadow: 0 10px 30px rgba(0,0,0,.16); }
+.theme-dark .next-class-card { background: linear-gradient(135deg, #152936 0%, #172f3b 73%, #183a3b 100%); }
+.theme-dark .nav-item:hover, .theme-dark .nav-item.active { color: #e7eef1; background: #1c3948; }
+.theme-dark .nav-item small, .theme-dark .sidebar-label { color: #718994; }
+.theme-dark .sidebar-divider, .theme-dark .next-class-meta, .theme-dark .announcement-item, .theme-dark .identity-meta, .theme-dark .results-table, .theme-dark .result-row, .theme-dark .attendance-row { border-color: #29404d; }
+.theme-dark .semester-card, .theme-dark .soft-button, .theme-dark .filter-button, .theme-dark .outline-button { border-color: #29404d; color: #d9e8f0; background: #1a3543; }
+.theme-dark .soft-button:hover, .theme-dark .filter-button:hover, .theme-dark .outline-button:hover { background: #244453; border-color: #3b5b69; }
+.theme-dark .primary-button { color: #0d1b26; background: #d9e8f0; box-shadow: 0 8px 18px rgba(0,0,0,.2); }
+.theme-dark .primary-button:hover { color: #071827; background: #ffffff; }
+.theme-dark .icon-button { color: #91a9b3; }
+.theme-dark .icon-button:hover { color: #e7eef1; background: #1c3948; }
+.theme-dark .theme-toggle { border-color: #355362; color: #c2d5dc; background: #172f3d; }
+.theme-dark .theme-toggle:hover { color: white; border-color: #537381; background: #204352; }
+.theme-dark .input-wrap, .theme-dark .search-field { border-color: #29404d; background: #152936; }
+.theme-dark .input-wrap input, .theme-dark .search-field input { color: #e7eef1; }
+.theme-dark .field-label, .theme-dark .text-button, .theme-dark .input-action, .theme-dark .link-button { color: #a9c5d0; }
+.theme-dark .mini-progress, .theme-dark .credit-progress, .theme-dark .long-progress { background: #29404d; }
+.theme-dark .progress-ring:before, .theme-dark .score-ring:before { background: #152936; }
+.theme-dark .progress-legend, .theme-dark .deadline p, .theme-dark .attendance-facts, .theme-dark .semester-footer, .theme-dark .registration-banner p { color: #9aadb7; }
+.theme-dark .registration-banner, .theme-dark .schedule-note, .theme-dark .attendance-banner { border-color: #29404d; background: #17333d; }
+.theme-dark .course-row-head, .theme-dark .result-row-head { color: #8ea6af; background: #122633; }
+.theme-dark .section-pill, .theme-dark .grade-badge, .theme-dark .status-pass { background: #234552; color: #b8e1d6; }
+.theme-dark .selection-card .credit-total { background: #17333d; }
+.theme-dark .timetable-card, .theme-dark .timetable { background: #152936; }
+.theme-dark .day-head, .theme-dark .day-grid { border-color: #29404d; background-color: #152936; }
+.theme-dark .day-grid { background-image: repeating-linear-gradient(to bottom, transparent 0, transparent 66px, #29404d 67px); }
+.theme-dark .time-column span, .theme-dark .day-head strong { color: #718994; }
+.theme-dark .day-head span { color: #d9e8f0; background: #244453; }
+.theme-dark .announcement-mark.gold { background: #3b3020; }
+.theme-dark .announcement-mark.blue { background: #1c3448; }
+.theme-dark .profile-cover { background: radial-gradient(circle at 75% 30%, rgba(224,161,67,.32) 0 1px, transparent 1.5px) 0 0/20px 20px, linear-gradient(120deg, #102c45 10%, #1c5268 100%); }
+.theme-dark .profile-avatar { border-color: #152936; }
+.theme-dark .toast { border-color: #31535c; color: #b8e1d6; background: #17333d; }
+.theme-dark .toast button { color: #9aadb7; }
+.theme-dark .login-bottom-note { color: #718994; }
+.theme-dark .brand-lockup { color: #e7eef1; }
+.theme-dark .brand-lockup span { color: #9aadb7; }
+
+@media (max-width: 540px) {
+  .theme-toggle-label { display: none; }
+  .theme-toggle { padding-right: 6px; }
+}

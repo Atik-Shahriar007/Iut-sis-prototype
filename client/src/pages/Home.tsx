@@ -51,9 +51,9 @@ const navItems: { label: View; icon: LucideIcon; hint: string }[] = [
 ];
 
 const availableCourses: Course[] = [
-  { code: "SWE 2301", name: "Computer Networking", faculty: "SWE", credit: 3, section: "A", instructor: "Dr. Samiul Karim", seats: 14 },
-  { code: "SWE 2303", name: "Engineering Ethics", faculty: "SWE", credit: 2, section: "B", instructor: "Md. Mahmud Hasan", seats: 31 },
-  { code: "SWE 2305", name: "Database Management", faculty: "SWE", credit: 3, section: "C", instructor: "Dr. Nusrat Jahan", seats: 7 },
+  { code: "SWE 2301", name: "Computer Networking", faculty: "SWE", credit: 3, section: "A", instructor: "Faisal Hussain", seats: 14 },
+  { code: "SWE 2303", name: "Engineering Ethics", faculty: "SWE", credit: 2, section: "B", instructor: "Niloy Yousuf", seats: 31 },
+  { code: "SWE 2305", name: "Database Management", faculty: "SWE", credit: 3, section: "C", instructor: "Abu Raihan Mustafa Kamal", seats: 7 },
 ];
 
 const currentCourses = [

@@ -83,8 +83,9 @@ function IUTMark({ dark = false }: { dark?: boolean }) {
 
 function LoginScreen({ onLogin }: { onLogin: () => void }) {
   const [showPassword, setShowPassword] = useState(false);
+  const [enteringPortal, setEnteringPortal] = useState(false);
   return (
-    <div className="login-page">
+    <div className={`login-page ${enteringPortal ? "portal-entering" : ""}`}>
       <section className="login-story">
         <div className="story-pattern" />
         <div className="story-orbit orbit-one" />
@@ -109,7 +110,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
             <h2>Sign in to your portal</h2>
             <p>Use your university credentials to continue.</p>
           </div>
-          <form onSubmit={(event) => { event.preventDefault(); onLogin(); }}>
+            <form onSubmit={(event) => { event.preventDefault(); setEnteringPortal(true); window.setTimeout(onLogin, 1450); }}>
             <label className="field-label" htmlFor="student-id">Student ID or email</label>
             <div className="input-wrap"><UserRound size={17} /><input id="student-id" defaultValue="230042116" placeholder="e.g. 230042116" /></div>
             <div className="field-row"><label className="field-label" htmlFor="password">Password</label><button type="button" className="text-button">Forgot password?</button></div>
@@ -121,6 +122,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
         </div>
         <div className="login-bottom-note">© 2026 Islamic University of Technology · Bangladesh</div>
       </section>
+      {enteringPortal && <div className="portal-transition" aria-live="polite"><div className="transition-stars"><i /><i /><i /><i /><i /><i /><i /><i /></div><div className="transition-core"><span className="transition-ring ring-a" /><span className="transition-ring ring-b" /><span className="transition-ring ring-c" /><span className="transition-logo"><img src="/iut-logo.png" alt="" /></span></div><div className="transition-copy"><span className="eyebrow eyebrow-light">AUTHENTICATED · IUT SIS</span><strong>Opening your portal</strong><small>Preparing your academic space</small><div className="transition-progress"><i /></div></div></div>}
     </div>
   );
 }

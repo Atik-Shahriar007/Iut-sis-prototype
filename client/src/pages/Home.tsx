@@ -87,21 +87,25 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
     <div className="login-page">
       <section className="login-story">
         <div className="story-pattern" />
+        <div className="story-orbit orbit-one" />
+        <div className="story-orbit orbit-two" />
         <div className="login-story-content">
           <IUTMark dark />
           <div className="story-copy">
-            <span className="eyebrow eyebrow-light">STUDENT INFORMATION SYSTEM</span>
-            <h1>Everything you need for your <em>next chapter.</em></h1>
+            <div className="story-kicker"><span className="pulse-dot" /> STUDENT INFORMATION SYSTEM <span className="kicker-line" /></div>
+            <h1>Your campus life, <em>in sync.</em></h1>
             <p>One calm, connected space to plan your semester, track your progress, and stay close to campus.</p>
+            <div className="story-features"><div><span className="feature-icon">01</span><span><strong>Plan with clarity</strong><small>Schedule, courses, and deadlines together.</small></span></div><div><span className="feature-icon">02</span><span><strong>Move with confidence</strong><small>See your progress at every step.</small></span></div></div>
           </div>
-          <div className="story-footer"><ShieldCheck size={16} /> Secure access for IUT students</div>
+          <div className="story-footer"><span className="secure-icon"><ShieldCheck size={16} /></span><span><strong>Secure access for IUT students</strong><small>Protected by IUT ICT Centre</small></span><span className="footer-arrow">↗</span></div>
         </div>
       </section>
       <section className="login-panel">
+        <div className="login-panel-glow" />
         <div className="login-form-wrap">
           <div className="mobile-mark"><IUTMark /></div>
           <div className="login-heading">
-            <span className="eyebrow">WELCOME BACK</span>
+            <div className="welcome-row"><span className="eyebrow">WELCOME BACK</span><span className="session-pill"><i /> Portal online</span></div>
             <h2>Sign in to your portal</h2>
             <p>Use your university credentials to continue.</p>
           </div>

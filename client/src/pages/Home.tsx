@@ -87,6 +87,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
   return (
     <div className={`login-page ${enteringPortal ? "portal-entering" : ""}`}>
       <section className="login-story">
+        <div className="campus-photo"><img src="/manus-storage/pasted_file_jrFTq5_image_02de9394.png" alt="Aerial view of the Islamic University of Technology campus" /></div>
         <div className="story-pattern" />
         <div className="story-orbit orbit-one" />
         <div className="story-orbit orbit-two" />

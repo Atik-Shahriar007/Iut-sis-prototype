@@ -87,7 +87,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
   return (
     <div className={`login-page ${enteringPortal ? "portal-entering" : ""}`}>
       <section className="login-story">
-        <div className="campus-photo"><img src="/manus-storage/pasted_file_VOdBIo_image_43ac751a.png" alt="Aerial view of the Islamic University of Technology campus" /></div>
+        <div className="campus-photo"><img src="/campus-hero.webp" alt="Aerial view of the Islamic University of Technology campus" /></div>
         <div className="story-pattern" />
         <div className="story-orbit orbit-one" />
         <div className="story-orbit orbit-two" />
@@ -123,7 +123,7 @@ function LoginScreen({ onLogin }: { onLogin: () => void }) {
         </div>
         <div className="login-bottom-note">© 2026 Islamic University of Technology · Bangladesh</div>
       </section>
-      {enteringPortal && <div className="portal-transition" aria-live="polite"><div className="transition-campus"><img src="/manus-storage/pasted_file_VOdBIo_image_43ac751a.png" alt="" /></div><div className="transition-stars"><i /><i /><i /><i /><i /><i /><i /><i /></div><div className="transition-core"><span className="transition-ring ring-a" /><span className="transition-ring ring-b" /><span className="transition-ring ring-c" /><span className="transition-logo"><img src="/iut-logo.png" alt="" /></span></div><div className="transition-copy"><span className="eyebrow eyebrow-light">AUTHENTICATED · IUT SIS</span><strong>Opening your portal</strong><small>Preparing your academic space</small><div className="transition-progress"><i /></div></div></div>}
+      {enteringPortal && <div className="portal-transition" aria-live="polite"><div className="transition-campus"><img src="/campus-hero.webp" alt="" /></div><div className="transition-stars"><i /><i /><i /><i /><i /><i /><i /><i /></div><div className="transition-core"><span className="transition-ring ring-a" /><span className="transition-ring ring-b" /><span className="transition-ring ring-c" /><span className="transition-logo"><img src="/iut-logo.png" alt="" /></span></div><div className="transition-copy"><span className="eyebrow eyebrow-light">AUTHENTICATED · IUT SIS</span><strong>Opening your portal</strong><small>Preparing your academic space</small><div className="transition-progress"><i /></div></div></div>}
     </div>
   );
 }
